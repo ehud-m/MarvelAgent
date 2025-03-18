@@ -216,3 +216,8 @@ The agent first retrieves structured facts from the Neo4j knowledge graph using 
 - Redis is used to cache previous user queries and responses, significantly reducing LLM usage for repeated questions.
 - Each LLM node in the LangGraph pipeline uses a **custom-crafted system prompt** tailored to its role (e.g., query generation, validation, summarization).
 - **Few-shot examples** are embedded into the prompts where appropriate, especially for query generation and validation, to ensure correct use of schema and Cypher syntax.
+- It is worth noting that two additional workflows were tested prior to the final workflow:
+  - The first approach used **GraphCypherQAChain as a standalone tool** for Cypher generation, execution, and question answering. While quick to implement, it produced suboptimal results due to limited control and a lack of mechanisms for recovering from errors.
+  - The second approach also relied on **GraphCypherQAChain for query generation and execution**, but introduced separate agents for **validation, refinement, augmentation, and synthesis** of the results. This improved the system’s ability to recover from mistakes and enhanced the structure and depth of responses. However, it suffered from inconvenient state management, lacked tight coordination between stages, did not allow sufficient control over the generated Cypher queries, and ultimately did not return accurate enough results for complex or nuanced queries.
+
+

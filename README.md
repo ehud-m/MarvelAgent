@@ -150,12 +150,16 @@ Ingests a specified number of characters from the prepared dataset into the Neo4
 
 ## Usage Flow
 
+![image](https://github.com/user-attachments/assets/d4c76a62-499a-4c6d-894d-2e70adf37518)
+
 1. Click **Build Dataset** in the frontend to prepare data.
 2. Specify how many characters to ingest.
 3. Ask questions such as:
    - “What gene gives Spider-Man his powers?”
    - “Which powers are granted by Gene A?”
    - “Who in the X-Men can teleport?”
+
+![image](https://github.com/user-attachments/assets/81c7a83a-b93f-4123-a371-0de17cc959d3)
 
 ---
 
